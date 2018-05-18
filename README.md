@@ -1,25 +1,4 @@
-# README
+# My first rails project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# devcamp_portfolio
+I made this while following along a ruby on rails devcamp course
+There is a LOT to learn about here = )
