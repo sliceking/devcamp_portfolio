@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
     
         respond_to do |format|
           if @portfolio_item.save
-            format.html { redirect_to portfolios_path , notice: 'Your portfolio item is live.' }
+            format.html { redirect_to portfolios_path , notice: 'Your portfolio item is alive.' }
           else
             format.html { render :new }
           end
@@ -28,7 +28,7 @@ class PortfoliosController < ApplicationController
 
         respond_to do |format|
           if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
-            format.html { redirect_to portfolios_path, notice: 'Blog was successfully updated.' }
+            format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
             format.json { render :show, status: :ok, location: @blog }
           else
             format.html { render :edit }
@@ -39,8 +39,19 @@ class PortfoliosController < ApplicationController
 
     def show 
         @portfolio_item = Portfolio.find(params[:id])
+    end
 
+    def destroy
+        #perform the lookup
+        @portfolio_item = Portfolio.find(params[:id])
         
-
+        #destroy the record
+        @portfolio_item.destroy
+        
+        #redirect after destroy
+        respond_to do |format|
+          format.html { redirect_to portfolios_url, notice: 'Portfolio was destroyed and turned to dust.' }
+          format.json { head :no_content }
+        end
     end
 end
