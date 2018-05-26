@@ -61,3 +61,4 @@ gem 'jquery-rails'
 # pushed to rubygems
 # gem 'wielga_devcamp_view_tool', git: 'https://github.com/svwielga4/wielga_devcamp_view_tool'
 gem 'wielga_devcamp_view_tool', '~> 0.1.0'
+gem 'petergate', '~> 1.8', '>= 1.8.1'
