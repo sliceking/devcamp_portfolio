@@ -5,6 +5,9 @@ class Portfolio < ApplicationRecord
                                    reject_if: lambda { |attrs| attrs['name'].blank? }
     validates_presence_of :title, :body, :main_image, :thumb_image
 
+    mount_uploader :thumb_image, PortfolioUploader
+    mount_uploader :main_image, PortfolioUploader
+
     #two ways of creating a scope for the controller,
     #it is good practice to create it here instead of the controller
     def self.angular

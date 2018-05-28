@@ -1,7 +1,8 @@
 class PortfoliosController < ApplicationController
-    access all: [:show, :index, :angular, :ruby], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
     before_action :set_portfolio_item, only: [:edit, :update, :destroy, :show]
     layout "portfolio"
+    access all: [:show, :index, :angular, :ruby], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
+    
     def index
         @portfolio_items = Portfolio.by_position
     end
@@ -75,7 +76,9 @@ class PortfoliosController < ApplicationController
     def portfolio_params
         params.require(:portfolio).permit(:title, 
                                           :subtitle, 
-                                          :body, 
+                                          :body,
+                                          :main_image,
+                                          :thumb_image,                                      
                                           technologies_attributes: [:name] )
     end
 
