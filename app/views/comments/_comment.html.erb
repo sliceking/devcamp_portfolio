@@ -1,14 +1,20 @@
-    <div class="comment-card m-1">
-      <div class="card">
-        <div class="card-block py-3">
-          <div class="row">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-11">
-              <%= comment.content %>
-            </div>
+<div class="comment-card m-1">
+  <div class="card">
+    <div class="card-block py-3">
+      <div class="row ml-2">
+        <div class="col-md-2">
+          <%= gravatar_helper comment.user %>
+        </div>
+        <div class="col-md-10">
+          <div>
+            <%= comment.content %>
+          </div>
+          <div class="text-info font-italic">
+            Comment posted by <%= comment.user.first_name %> 
+            <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
