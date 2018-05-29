@@ -9,8 +9,8 @@ class Blog < ApplicationRecord
 
     has_many :comments, dependent: :destroy
 
-    def self.special_blogs
-        all
+    def self.recent
+      order('created_at DESC')
     end
 
     def self.featured
