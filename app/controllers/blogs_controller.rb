@@ -81,7 +81,6 @@ class BlogsController < ApplicationController
     else
       @blog.draft!
     end
-    
     redirect_to blogs_url, notice: 'Blog status was updated.'
   end
 
